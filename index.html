@@ -41,8 +41,12 @@
     function checkCloseDate(date){
         var now = new Date();
         var arr = new Date(date);
-        console.log(arr);
-        console.log(now);
+
+        if(now > arr){
+          return false;
+        }else if(now < arr){
+          return true;
+        }
       };
     function getDate(){
         var requestURL = "/json/dtravel_news.json"
@@ -56,6 +60,7 @@
           console.log(isempty);
           if(isempty == false){
             var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime);
+            console.log(check);
               putFoundation();
               dataDeployment(superHeroes);
           }
