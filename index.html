@@ -60,9 +60,10 @@
           console.log(isempty);
           if(isempty == false){
             var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime);
-            console.log(check);
+            if(check){
               putFoundation();
               dataDeployment(superHeroes);
+            }
           }
         }
       };
