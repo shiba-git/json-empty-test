@@ -49,7 +49,7 @@
 
         request.onload = function() {
           var superHeroes = request.response;
-          console.log(isEmpty(superHeroes.dtravel_news[0]));
+          console.log(isEmpty(superHeroes.dtravel_news));
           dataDeployment(superHeroes);
         }
       };
