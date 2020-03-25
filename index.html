@@ -57,7 +57,6 @@
         request.onload = function() {
           var superHeroes = request.response;
           var isempty = isEmpty(superHeroes.dtravel_news);
-          console.log(isempty);
           if(isempty == false){
             var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime);
             if(check){
