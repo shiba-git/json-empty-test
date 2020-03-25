@@ -39,6 +39,7 @@
       return !Object.keys(obj).length;
     }
     function checkCloseDate(date){
+      toDate(date, "-")
       function toDate (str, delim) {
         var now = new Date();
         var arr = str.split(delim);
@@ -57,10 +58,9 @@
           var isempty = isEmpty(superHeroes.dtravel_news);
           console.log(isempty);
           if(isempty == false){
-            var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime, "-");
+            var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime);
               putFoundation();
               dataDeployment(superHeroes);
-
           }
         }
       };
