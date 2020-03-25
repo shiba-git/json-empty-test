@@ -47,8 +47,11 @@
 
         request.onload = function() {
           var superHeroes = request.response;
-          console.log(isEmpty(superHeroes.dtravel_news));
-          dataDeployment(superHeroes);
+          var isempty = isEmpty(superHeroes.dtravel_news);
+          if(isempty == false){
+            putFoundation();
+            dataDeployment(superHeroes);
+          }
         }
       };
     function dataDeployment(data){
@@ -56,7 +59,7 @@
       '<a href="https://pr.travel.dmkt-sp.jp/assets/content/common/pc/js/&#39;%20+%20data.dtravel_news[0].url%20+%20&#39;">' + data.dtravel_news[0].title + '</a><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./newsborder.js_files/translate_24dp.png" width="20" height="20" alt="Google &#32763;&#35379;"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">&#21407;&#25991;</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">&#32763;&#35379;&#12434;&#25913;&#21892;&#12377;&#12427;</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>';
       document.getElementById('info-link').insertAdjacentHTML('afterbegin', domInsertNewsBorder);
     };
-      putFoundation();
+
       getDate();
     </script>
 
