@@ -49,6 +49,7 @@
 
         request.onload = function() {
           var superHeroes = request.response;
+          console.log(superHeroes);
           console.log(isEmpty(superHeroes.dtravel_news));
           dataDeployment(superHeroes);
         }
