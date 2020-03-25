@@ -38,19 +38,29 @@
     function isEmpty(obj){
       return !Object.keys(obj).length;
     }
+    function checkCloseDate(date){
+      function toDate (str, delim) {
+        var now = new Date();
+        var arr = str.split(delim);
+        console.log(arr);
+        console.log(now);
+      };
+    }
     function getDate(){
         var requestURL = "/json/dtravel_news.json"
         var request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
-
         request.onload = function() {
           var superHeroes = request.response;
           var isempty = isEmpty(superHeroes.dtravel_news);
+          console.log(isempty);
           if(isempty == false){
-            putFoundation();
-            dataDeployment(superHeroes);
+            var check = checkCloseDate(superHeroes.dtravel_news[0].sticky_close_datetime, "-");
+              putFoundation();
+              dataDeployment(superHeroes);
+
           }
         }
       };
