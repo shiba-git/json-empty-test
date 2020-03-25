@@ -36,8 +36,6 @@
     }
 
     function isEmpty(obj){
-      console.log(obj);
-      console.log(Object.keys(obj));
       return !Object.keys(obj).length;
     }
     function getDate(){
@@ -49,7 +47,6 @@
 
         request.onload = function() {
           var superHeroes = request.response;
-          console.log(superHeroes);
           console.log(isEmpty(superHeroes.dtravel_news));
           dataDeployment(superHeroes);
         }

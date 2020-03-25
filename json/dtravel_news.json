@@ -1,3 +1,5 @@
 {
-    "dtravel_news": []
+    "dtravel_news": [
+      "title", "test"
+    ]
 }
