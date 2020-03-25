@@ -39,10 +39,8 @@
       return !Object.keys(obj).length;
     }
     function checkCloseDate(date){
-      toDate(date, "-")
-      function toDate (str, delim) {
         var now = new Date();
-        var arr = str.split(delim);
+        var arr = new Date(date);
         console.log(arr);
         console.log(now);
       };
